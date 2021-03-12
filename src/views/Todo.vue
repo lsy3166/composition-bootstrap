@@ -10,7 +10,7 @@
       <!-- <b-form-input placeholder="Enter your todo" @keyup.enter="addTodo"></b-form-input> -->
       <div class="form-group">
         <input
-          v-validate.continues="'required|alpha|min:5'"
+          v-validate.continues="'required|min:5|max:25'"
           type="text"
           class="form-control"
           name="todo"
