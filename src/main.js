@@ -4,7 +4,9 @@ import router from './router';
 import store from './store';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import VueCompositionAPI from '@vue/composition-api';
+import VeeValidate from 'vee-validate';
 
+Vue.use(VeeValidate);
 Vue.use(VueCompositionAPI);
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)

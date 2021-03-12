@@ -7,7 +7,23 @@
       sub-title="Input to do"
       class="m-3"
     >
-      <b-form-input placeholder="Enter your todo" @keyup.enter="addTodo"></b-form-input>
+      <!-- <b-form-input placeholder="Enter your todo" @keyup.enter="addTodo"></b-form-input> -->
+      <div class="form-group">
+        <input
+          v-validate.continues="'required|alpha|min:5'"
+          type="text"
+          class="form-control"
+          name="todo"
+          placeholder="Enter your todo"
+          @keyup.enter="addTodo"
+        />
+        <!-- <span class="alert-danger">{{ errors.first('todo') }}</span> -->
+        <ul>
+          <li class="alert-danger" v-for="(error, index) in errors.collect('todo')" :key="index">
+            {{ error }}
+          </li>
+        </ul>
+      </div>
       <hr />
       <b-card-text> </b-card-text>
 
